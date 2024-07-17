@@ -45,15 +45,16 @@
 
                     <x-mary-list-item :item="$user" value="name" sub-value="email" no-separator no-hover class="-mx-2 !-my-2 rounded">
                         <x-slot:actions>
-{{--                            <x-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="logoff" no-wire-navigate link="/logout" />--}}
+                            <x-mary-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="logoff" no-wire-navigate link="/logout" />
                         </x-slot:actions>
                     </x-mary-list-item>
 
                     <x-mary-menu-separator />
                 @endif
 
-                <x-mary-menu-item title="Hello" icon="o-sparkles"  />
-                <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
+                <x-mary-menu-item title="Dashboard" icon="s-home" link="/"  />
+                <x-mary-menu-item title="Usuários" icon="s-user" link="/users" />
+                <x-mary-menu-sub title="Configurações" icon="s-cog-6-tooth">
                     <x-mary-menu-item title="Wifi" icon="o-wifi" />
                     <x-mary-menu-item title="Archives" icon="o-archive-box"  />
                 </x-mary-menu-sub>
