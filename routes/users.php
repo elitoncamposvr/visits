@@ -10,7 +10,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
     Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
-    Route::delete('/users/destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::delete('/users/destroy', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/show/{id}', [UserController::class, 'show'])->name('users.show');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
