@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -31,6 +32,10 @@
 
         {{-- Right side actions --}}
         <x-slot:actions>
+            <div class="flex flex-col">
+                <span class="font-semibold text-sm">{{ Auth::user()->name }}</span>
+                <span class="text-xs">{{ Auth::user()->email }}</span>
+            </div>
             <x-mary-button icon="o-envelope" link="###" class="btn-circle btn-ghost btn-xs" responsive />
             <x-mary-button icon="o-bell" link="###" class="btn-circle btn-ghost btn-xs" responsive />
 {{--            <x-mary-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="logoff" no-wire-navigate link="/logout" />--}}
