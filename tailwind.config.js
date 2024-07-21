@@ -7,7 +7,7 @@ export default {
 		'./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
 		 './storage/framework/views/*.php',
 		 './resources/views/**/*.blade.php',
-		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php"
+        'node_modules/preline/dist/*.js',
 	],
 
     darkMode:'class',
@@ -20,12 +20,9 @@ export default {
         },
     },
 
-    daisyui:{
-        themes:["light", "dark"],
-    },
 
     plugins: [
 		forms,
-		require("daisyui")
+		require("preline/plugin")
 	],
 };

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .menu-item{
+        @apply bg-purple-100 !important;
+    }
+
+ .menu-hover{
+     @apply bg-purple-300;
+ }
+
+}
