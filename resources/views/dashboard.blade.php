@@ -3,7 +3,7 @@
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <div class="p-4 md:p-5">
                         <div class="flex items-center gap-x-2">
                             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
@@ -35,7 +35,7 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <div class="p-4 md:p-5">
                         <div class="flex items-center gap-x-2">
                             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
@@ -53,7 +53,7 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <div class="p-4 md:p-5">
                         <div class="flex items-center gap-x-2">
                             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
@@ -77,7 +77,7 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <div class="p-4 md:p-5">
                         <div class="flex items-center gap-x-2">
                             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
@@ -98,7 +98,7 @@
 
             <div class="grid lg:grid-cols-2 gap-4 sm:gap-6">
                 <!-- Card -->
-                <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <!-- Header -->
                     <div class="flex justify-between items-center">
                         <div>
@@ -124,7 +124,7 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-md dark:bg-neutral-800 dark:border-neutral-700">
                     <!-- Header -->
                     <div class="flex justify-between items-center">
                         <div>
@@ -154,7 +154,7 @@
             <div class="flex flex-col">
                 <div class="-m-1.5 overflow-x-auto">
                     <div class="p-1.5 min-w-full inline-block align-middle">
-                        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+                        <div class="bg-white border border-gray-200 rounded-md shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
                             <!-- Header -->
                             <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
                                 <div>
