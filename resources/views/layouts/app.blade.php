@@ -18,7 +18,7 @@
 <body class="bg-slate-200/75 dark:bg-slate-800">
 
 <!-- ========== HEADER ========== -->
-<header class="sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-orange-400 dark:bg-slate-900 border-b text-sm py-2.5 sm:py-4 lg:ps-64 dark:bg-neutral-800 dark:border-neutral-700">
+<header class="sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-white shadow-sm dark:bg-slate-900 text-sm py-2.5 sm:py-4 lg:ps-64 dark:bg-neutral-800 dark:border-neutral-700">
     <nav class="flex basis-full items-center w-full mx-auto px-4 sm:px-6" aria-label="Global">
         <div class="me-5 lg:me-0 lg:hidden">
             <!-- Logo -->
@@ -136,7 +136,7 @@
 <!-- End Breadcrumb -->
 
 <!-- Sidebar -->
-<div id="application-sidebar" class="hs-overlay [--auto-close:lg]
+<div id="application-sidebar" class="shadow-md hs-overlay [--auto-close:lg]
   hs-overlay-open:translate-x-0
   -translate-x-full transition-all duration-300 transform
   w-[260px]
@@ -146,7 +146,7 @@
   lg:block lg:translate-x-0 lg:end-auto lg:bottom-0
   dark:bg-neutral-800 dark:border-neutral-700
  ">
-    <div class="px-8 pt-4 flex justify-center">
+    <div class="px-8 py-2.5 flex justify-center">
         <!-- Logo -->
         <a class="flex-none text-lg inline-block font-semibold focus:outline-none focus:opacity-80 dark:text-white" href="{{ route('dashboard') }}" aria-label="Dashboard">
             LOGO EMPRESA
