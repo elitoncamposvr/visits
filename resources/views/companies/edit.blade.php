@@ -25,7 +25,7 @@
                                           d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
                                 </svg>
                                 <span class="px-2">
-                                    Criar Empresa
+                                    Editar Empresa
                                 </span>
                             </h2>
                         </div>
@@ -34,44 +34,46 @@
 
 
                     <div class="w-full flex  flex-col px-2 text-sm py-3 border-b border-gray-200">
-                        <form action="{{ route('companies.store') }}" method="post">
+                        <form action="{{ route('companies.update', [$company->id]) }}" method="post">
                             @csrf
+                            @method('put')
+
                             <div class="w-full flex mb-3">
                                 <div class="w-1/2 sm:pr-2">
                                     <label for="name">Nome da Empresa</label>
-                                    <input type="text" name="name" id="name" class="w-full" required autofocus>
+                                    <input type="text" name="name" id="name" class="w-full" required value="{{ $company->name }}">
                                 </div>
                                 <div class="w-1/2">
                                     <label for="contact_name">Contato</label>
-                                    <input type="text" name="contact_name" id="contact_name" class="w-full" required>
+                                    <input type="text" name="contact_name" id="contact_name" class="w-full" required value="{{ $company->contact_name }}">
                                 </div>
                             </div>
                             <div class="w-full flex mb-3">
                                 <div class="w-1/2 sm:pr-2">
                                     <label for="email">E-mail</label>
-                                    <input type="email" name="email" id="email" class="w-full" required>
+                                    <input type="email" name="email" id="email" class="w-full" required value="{{ $company->email }}">
                                 </div>
                                 <div class="w-1/2">
                                     <label for="phone">Telefone/Celular</label>
-                                    <input type="tel" name="phone" id="phone" class="w-full" required>
+                                    <input type="tel" name="phone" id="phone" class="w-full" required value="{{ $company->phone }}">
                                 </div>
                             </div>
                             <div class="w-full mb-3">
                                 <label for="address">Endereço</label>
-                                <input type="text" name="address" id="address" class="w-full" required>
+                                <input type="text" name="address" id="address" class="w-full" required value="{{ $company->address }}">
                             </div>
                             <div class="w-full flex mb-3">
                                 <div class="w-4/12 sm:pr-2">
                                     <label for="cep">CEP</label>
-                                    <input type="text" name="cep" id="cep" class="w-full" required>
+                                    <input type="text" name="cep" id="cep" class="w-full" required value="{{ $company->cep }}">
                                 </div>
                                 <div class="w-4/12 sm:pr-2">
                                     <label for="city">Cidade</label>
-                                    <input type="text" name="city" id="city" class="w-full" required>
+                                    <input type="text" name="city" id="city" class="w-full" required value="{{ $company->city }}">
                                 </div>
                                 <div class="w-4/12">
                                     <label for="province">Estado</label>
-                                    <input type="text" name="province" id="province" class="w-full" required>
+                                    <input type="text" name="province" id="province" class="w-full" required value="{{ $company->province }}">
                                 </div>
                             </div>
                             <div class="w-full flex justify-center">

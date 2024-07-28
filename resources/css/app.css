@@ -6,7 +6,8 @@
     input[type="text"],
     input[type="password"],
     input[type="email"],
-    input[type="search"]{
+    input[type="search"],
+    input[type="tel"]{
         @apply rounded-md border-gray-300;
     }
 
