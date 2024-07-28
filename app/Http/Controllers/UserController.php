@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -32,7 +31,7 @@ class UserController extends Controller
             'password' => 'required|string|min:6',
             'user_level' => 'required|integer',
         ]);
-//
+
         $users = User::query()->create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
@@ -44,12 +43,6 @@ class UserController extends Controller
 
         return redirect(route('users.index', absolute: false));
 
-//        dump($request->all());
-    }
-
-    public function show(User $user)
-    {
-        //
     }
 
     public function edit($id)
@@ -87,6 +80,18 @@ class UserController extends Controller
 
         return redirect(route('users.index', absolute: false));
 
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $results = User::where('name', 'ilike', "%{$search}%")
+            ->orWhere('name', 'ilike', "%{$search}%")
+            ->get();
+
+        return view('users.users_search', [
+            'users' => $results,
+        ]);
     }
 
     public function destroy(Request $request)

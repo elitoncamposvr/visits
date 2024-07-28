@@ -12,6 +12,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/destroy', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/show/{id}', [UserController::class, 'show'])->name('users.show');
+    Route::post('/users/search', [UserController::class, 'search'])->name('users.search');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
