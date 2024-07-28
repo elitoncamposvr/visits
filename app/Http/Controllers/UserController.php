@@ -89,8 +89,11 @@ class UserController extends Controller
 
     }
 
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
-        //
+        $user = User::query()->find($request->get('id'));
+        $user->delete();
+
+        return redirect(route('users.index', absolute: false));
     }
 }
