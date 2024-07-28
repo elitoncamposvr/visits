@@ -10,16 +10,21 @@
                     <!-- Header -->
                     <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
                         <div>
-                            <h2 class="text-xl font-semibold text-gray-600 dark:text-neutral-200 inline-flex items-center">
-                                Usuários
-                                <span class="px-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke-width="1.5" stroke="currentColor" class="size-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
-                                    </svg>
+                            <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200 inline-flex items-center">
+                                <span class="inline-flex items-center justify-center size-[38px] rounded-full bg-slate-300 dark:bg-neutral-500">
+                                    <span class="font-medium text-sm text-gray-800 leading-none dark:text-neutral-200">
+                                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    </span>
                                 </span>
-                                <span>
+                                <span class="px-2">
+                                    Usuários
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                                </svg>
+                                <span class="px-2">
                                     Criar Usuário
                                 </span>
                             </h2>

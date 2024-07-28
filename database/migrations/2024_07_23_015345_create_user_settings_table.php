@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('user_settings', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_user');
+            $table->string('primary_color')->default('#000000');
+            $table->string('secondary_color')->default('#000000');
+            $table->string('tertiary_color')->default('#000000');
+            $table->string('bg_color')->default('#000000');
+            $table->string('primary_color_dark')->default('#000000');
+            $table->string('secondary_color_dark')->default('#000000');
+            $table->string('tertiary_color_dark')->default('#000000');
+            $table->string('bg_color_dark')->default('#000000');
             $table->timestamps();
         });
     }

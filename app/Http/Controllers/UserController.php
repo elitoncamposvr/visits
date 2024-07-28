@@ -13,14 +13,14 @@ class UserController extends Controller
     {
         $users = User::paginate(10);
 
-        return view('users.users_index', [
+        return view('users.index', [
             'users' => $users,
         ]);
     }
 
     public function create()
     {
-        return view('users.users_create');
+        return view('users.create');
     }
 
     public function store(Request $request)
@@ -49,7 +49,7 @@ class UserController extends Controller
     {
 
         $user = User::query()->find($id);
-        return view('users.users_edit', [
+        return view('users.edit', [
             'user' => $user,
         ]);
     }
@@ -89,7 +89,7 @@ class UserController extends Controller
             ->orWhere('name', 'ilike', "%{$search}%")
             ->get();
 
-        return view('users.users_search', [
+        return view('users.search', [
             'users' => $results,
         ]);
     }
