@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -60,9 +61,32 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,'.$id,
+            'user_level' => 'required|integer',
+            'status' => 'required|integer',
+        ]);
+
+        if ($request->user_level == 0){
+            $is_admin = true;
+        } else{
+            $is_admin = false;
+        }
+
+        $user = User::query()->find($id);
+        $user->update([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'user_level' => $request->get('user_level'),
+            'status' => $request->get('status'),
+            'is_admin' => $is_admin,
+        ]);
+
+        return redirect(route('users.index', absolute: false));
+
     }
 
     public function destroy(User $user)

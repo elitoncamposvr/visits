@@ -35,35 +35,36 @@
                             <div class="w-full flex mb-3">
                                 <div class="w-1/2 sm:mr-1.5">
                                     <label for="name">Nome</label>
-                                    <input type="text" name="name" id="name" class="w-full" value="{{ $user->name }}" required autofocus>
+                                    <input type="text" name="name" id="name" class="w-full" value="{{ $user->name }}" required>
                                 </div>
                                 <div class="w-1/2">
                                     <label for="email">E-mail</label>
-                                    <input type="email" name="email" id="email" class="w-full" required>
+                                    <input type="email" name="email" id="email" class="w-full" value="{{ $user->email }}" required>
                                 </div>
                             </div>
                             <div class="w-full flex mb-3">
                                 <div class="w-1/2 sm:mr-1.5">
-                                    <label for="password">Senha</label>
-                                    <div class="w-full">
-                                        <input type="password" name="password" id="password" class="w-full" required>
-                                    </div>
-                                </div>
-                                <div class="w-1/2">
                                     <label for="user_level">Nível Usuário</label>
                                     <select name="user_level" id="user_level" class="w-full" required>
                                         @if(Auth::user()->is_admin === true)
-                                            <option value="1">Administrador Geral</option>
-                                            <option value="0">Usuário Administrador do Sistema</option>
+                                            <option value="1" {{ $user->user_level === 1 ? 'selected' : '' }}>Administrador Geral</option>
+                                            <option value="0" {{ $user->user_level === 0 ? 'selected' : '' }}>Usuário Administrador do Sistema</option>
                                         @endif
 
                                         @if(Auth::user()->is_admin === false)
-                                            <option value="1">Administrador Geral</option>
-                                            <option value="2">Administrador de Projetos</option>
-                                            <option value="3">Usuário Sênior</option>
-                                            <option value="4">Usuário Pleno</option>
-                                            <option value="5">Usuário Júnior</option>
+                                            <option value="1" {{ $user->user_level === 1 ? 'selected' : '' }}>Administrador Geral</option>
+                                            <option value="2" {{ $user->user_level === 2 ? 'selected' : '' }}>Administrador de Projetos</option>
+                                            <option value="3" {{ $user->user_level === 3 ? 'selected' : '' }}>Usuário Sênior</option>
+                                            <option value="4" {{ $user->user_level === 4 ? 'selected' : '' }}>Usuário Pleno</option>
+                                            <option value="5" {{ $user->user_level === 5 ? 'selected' : '' }}>Usuário Júnior</option>
                                         @endif
+                                    </select>
+                                </div>
+                                <div class="w-1/2">
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" class="w-full" required>
+                                        <option value="1" {{ $user->status === 1 ? 'selected' : '' }}>Ativo</option>
+                                        <option value="2" {{ $user->status !== 1 ? 'selected' : '' }}>Inativo</option>
                                     </select>
                                 </div>
                             </div>
