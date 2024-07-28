@@ -11,8 +11,8 @@
                                 <span class="inline-flex items-center justify-center size-[38px] rounded-full bg-slate-300 dark:bg-neutral-500">
                                     <span class="font-medium text-sm text-gray-800 leading-none dark:text-neutral-200">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-</svg>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                                        </svg>
 
                                     </span>
                                 </span>
@@ -39,26 +39,26 @@
                     </div>
                     <!-- End Header -->
                     @if($companies->count() >= 1)
-                    <div class="px-2 py-2.5 w-full flex font-semibold uppercase text-xs text-gray-800 bg-gray-100 border-b border-gray-200 dark:text-white dark:bg-neutral-900">
-                        <div class="w-1/12">
+                        <div class="px-2 py-2.5 w-full flex font-semibold uppercase text-xs text-gray-800 bg-gray-100 border-b border-gray-200 dark:text-white dark:bg-neutral-900">
+                            <div class="w-1/12">
 
+                            </div>
+                            <div class="w-4/12">
+                                Nome
+                            </div>
+                            <div class="w-2/12">
+                                Status
+                            </div>
+                            <div class="w-2/12">
+                                Nível
+                            </div>
+                            <div class="w-2/12">
+                                Criado em
+                            </div>
+                            <div class="w-1/12 text-center">
+                                Ações
+                            </div>
                         </div>
-                        <div class="w-4/12">
-                            Nome
-                        </div>
-                        <div class="w-2/12">
-                            Status
-                        </div>
-                        <div class="w-2/12">
-                            Nível
-                        </div>
-                        <div class="w-2/12">
-                            Criado em
-                        </div>
-                        <div class="w-1/12 text-center">
-                            Ações
-                        </div>
-                    </div>
                     @endif
 
                     @foreach($companies as $company)
