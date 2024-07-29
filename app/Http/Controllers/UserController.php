@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -20,7 +21,11 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('users.create');
+        $companies = Company::query()->get();
+
+        return view('users.create', [
+            'companies' => $companies,
+        ]);
     }
 
     public function store(Request $request)
@@ -32,11 +37,18 @@ class UserController extends Controller
             'user_level' => 'required|integer',
         ]);
 
+        if ($request->get('user_level') == 0) {
+            $company_id = 0;
+        } else{
+            $company_id = $request->get('company_id');
+        }
+
         $users = User::query()->create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
             'user_level' => $request->get('user_level'),
+            'company_id' => $company_id,
         ]);
 
         event(new Registered($users));

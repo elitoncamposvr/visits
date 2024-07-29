@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'company_id',
         'user_level',
         'status',
         'is_admin',

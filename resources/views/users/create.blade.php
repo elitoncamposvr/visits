@@ -36,10 +36,18 @@
                         <form action="{{ route('users.store') }}" method="post">
                             @csrf
 
-                        <div class="w-full flex mb-3">
-                            <div class="w-1/2 sm:mr-1.5">
+                            <div class="w-full mb-3">
                                 <label for="name">Nome</label>
                                 <input type="text" name="name" id="name" class="w-full" required autofocus>
+                            </div>
+                        <div class="w-full flex mb-3">
+                            <div class="w-1/2 sm:mr-1.5">
+                                <label for="company_id">Empresa</label>
+                                <select name="company_id" id="company_id" class="w-full" required>
+                                    @foreach($companies as $company)
+                                        <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="w-1/2">
                                 <label for="email">E-mail</label>
