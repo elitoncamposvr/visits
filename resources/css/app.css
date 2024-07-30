@@ -14,6 +14,10 @@
     select{
         @apply rounded-md border-gray-300;
     }
+
+    textarea{
+        @apply resize-none h-20 rounded-md border-gray-300;
+    }
 }
 
 @layer utilities {

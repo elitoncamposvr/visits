@@ -33,7 +33,7 @@
                     </div>
 
 
-                    <div class="w-full flex  flex-col px-2 text-sm py-3 border-b border-gray-200">
+                    <div class="w-full flex flex-col px-2 text-sm py-3 border-b border-gray-200">
                         <form action="{{ route('companies.store') }}" method="post">
                             @csrf
                             <div class="w-full flex mb-3">

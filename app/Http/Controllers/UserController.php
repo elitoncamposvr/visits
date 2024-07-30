@@ -6,17 +6,26 @@ use App\Models\Company;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(10);
-
+        if (Auth::user()->is_admin === true) {
+            $users = User::query()
+                ->where('user_level', '<=', '1')
+                ->paginate(10);
+        } else{
+        $users = User::query()
+            ->where('company_id', '=', Auth::user()->company_id)
+            ->paginate(10);
+        }
         return view('users.index', [
             'users' => $users,
         ]);
+
     }
 
     public function create()
@@ -61,8 +70,10 @@ class UserController extends Controller
     {
 
         $user = User::query()->find($id);
+        $companies = Company::query()->get();
         return view('users.edit', [
             'user' => $user,
+            'companies' => $companies,
         ]);
     }
 
@@ -73,6 +84,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             'user_level' => 'required|integer',
             'status' => 'required|integer',
+            'company_id' => 'required|integer',
         ]);
 
         if ($request->user_level == 0){
@@ -88,6 +100,7 @@ class UserController extends Controller
             'user_level' => $request->get('user_level'),
             'status' => $request->get('status'),
             'is_admin' => $is_admin,
+            'company_id' => $request->get('company_id'),
         ]);
 
         return redirect(route('users.index', absolute: false));
