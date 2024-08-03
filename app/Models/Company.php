@@ -19,4 +19,9 @@ class Company extends Model
         'city',
         'province',
     ];
+
+    public function license()
+    {
+        return $this->hasOne(License::class);
+    }
 }

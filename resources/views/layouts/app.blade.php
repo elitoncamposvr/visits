@@ -1,11 +1,5 @@
 @php
     use App\Models\CompanySetting;use Illuminate\Support\Facades\Auth;
-    $company_id = Auth::user()->company_id;
-    $set = CompanySetting::query()->where('company_id', $company_id)->first();
-
-    $primary_color = $set->primary_color;
-    $secondary_color = $set->secondary_color;
-
 @endphp
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -22,11 +16,6 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>
-        .primary_color {
-            background-color: {{ $primary_color }};
-        }
-    </style>
 </head>
 <body class="bg-slate-200/75 dark:bg-slate-800">
 

@@ -10,14 +10,17 @@ class LicenseController extends Controller
 
     public function index()
     {
-        return view('licenses.index',[
-            'licenses' => License::paginate(10)
-        ]);
+        return view('inactive');
     }
 
     public function create()
     {
-        //
+        return view('inactive');
+    }
+
+    public function inactive()
+    {
+        return view('inactive');
     }
 
     public function store(Request $request)
