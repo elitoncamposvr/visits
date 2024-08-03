@@ -7,7 +7,8 @@
     input[type="password"],
     input[type="email"],
     input[type="search"],
-    input[type="tel"]{
+    input[type="tel"],
+    input[type="date"]{
         @apply rounded-md border-gray-300;
     }
 

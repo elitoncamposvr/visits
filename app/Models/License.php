@@ -12,11 +12,13 @@ class License extends Model
 
     protected $fillable = [
         'company_id',
+        'expires_at'
     ];
 
 //    protected $dates = ['expires_at'];
     protected $casts = [
         'expires_at' => 'datetime',
+        'created_at' => 'datetime',
     ];
 
     public function company(): BelongsTo
