@@ -32,41 +32,42 @@
                             <div class="flex bg-gray-100 hover:bg-gray-200 rounded-lg transition p-1 dark:bg-neutral-700 dark:hover:bg-neutral-600">
                                 <nav class="flex gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
                                     <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 font-medium rounded-lg hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white active" id="segment-item-1" aria-selected="true" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
-                                        Cores
+                                        Geral
                                     </button>
                                     <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 font-medium rounded-lg hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white" id="segment-item-2" aria-selected="false" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
-                                        Tab 2
+                                        Cores
                                     </button>
-                                    <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 font-medium rounded-lg hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white" id="segment-item-3" aria-selected="false" data-hs-tab="#segment-3" aria-controls="segment-3" role="tab">
-                                        Tab 3
-                                    </button>
+{{--                                    <button type="button" class="hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 font-medium rounded-lg hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white" id="segment-item-3" aria-selected="false" data-hs-tab="#segment-3" aria-controls="segment-3" role="tab">--}}
+{{--                                        Tab 3--}}
+{{--                                    </button>--}}
                                 </nav>
                             </div>
                         </div>
 
                         <div class="mt-3">
                             <div id="segment-1" role="tabpanel" aria-labelledby="segment-item-1">
-                                <form action="{{ route('settings.update', [Auth::user()->company_id]) }}" method="post">
-                                    @csrf
-                                    @method('put')
+{{--                                <form action="{{ route('settings.update', [Auth::user()->company_id]) }}" method="post">--}}
+{{--                                    @csrf--}}
+{{--                                    @method('put')--}}
 
-                                    <div class="text-gray-500 dark:text-neutral-400 mb-3">
-                                        <label for="hs-color-input" class="block text-sm font-medium mb-2 dark:text-white">Selecione a cor primária (aplicada em menus e botões de ação)</label>
-                                        <input type="color" name="color" id="color" class="p-1 h-10 w-14 block bg-white border border-gray-200 cursor-pointer rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700" id="hs-color-input" value="{{ $settings->secondary_color }}" title="Escolha sua cor">
-                                    </div>
-                                        <button class="primary-button primary_color" type="submit">Selecionar Cor</button>
-                                </form>
+{{--                                    <div class="text-gray-500 dark:text-neutral-400 mb-3">--}}
+{{--                                        <label for="hs-color-input" class="block text-sm font-medium mb-2 dark:text-white">Selecione a cor primária (aplicada em menus e botões de ação)</label>--}}
+{{--                                        <input type="color" name="color" id="color" class="p-1 h-10 w-14 block bg-white border border-gray-200 cursor-pointer rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700" id="hs-color-input" value="" title="Escolha sua cor">--}}
+{{--                                    </div>--}}
+{{--                                        <button class="primary-button primary_color" type="submit">Selecionar Cor</button>--}}
+{{--                                </form>--}}
+                                Configurações gerais da empresa
                             </div>
                             <div id="segment-2" class="hidden" role="tabpanel" aria-labelledby="segment-item-2">
                                 <p class="text-gray-500 dark:text-neutral-400">
-                                    This is the <em class="font-semibold text-gray-800 dark:text-neutral-200">second</em> item's tab body.
+                                    Configurações de cores/temas
                                 </p>
                             </div>
-                            <div id="segment-3" class="hidden" role="tabpanel" aria-labelledby="segment-item-3">
-                                <p class="text-gray-500 dark:text-neutral-400">
-                                    This is the <em class="font-semibold text-gray-800 dark:text-neutral-200">third</em> item's tab body.
-                                </p>
-                            </div>
+{{--                            <div id="segment-3" class="hidden" role="tabpanel" aria-labelledby="segment-item-3">--}}
+{{--                                <p class="text-gray-500 dark:text-neutral-400">--}}
+{{--                                    This is the <em class="font-semibold text-gray-800 dark:text-neutral-200">third</em> item's tab body.--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>

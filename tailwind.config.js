@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+const { createThemes } = require('tw-colors');
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -23,6 +24,23 @@ export default {
 
     plugins: [
 		forms,
-		require("preline/plugin")
+		require("preline/plugin"),
+        createThemes({
+            light:{
+                'primary': '#2563eb',
+                'secondary': '#93c5fd',
+                'tertiary': '#38bdf8',
+            },
+            dark:{
+                'primary': '#0f172a',
+                'secondary': '#64748b',
+                'tertiary': '#e2e8f0',
+            },
+            orange:{
+                'primary': '#fbbf24',
+                'secondary': '#c2410c',
+                'tertiary': '#fcd34d',
+            }
+        })
 	],
 };
