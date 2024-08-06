@@ -5,7 +5,7 @@ use App\Http\Controllers\LicenseController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware(['check.license', 'auth', 'verified', 'auth.session'])->group(function () {
+Route::middleware(['auth', 'verified', 'auth.session'])->group(function () {
     Route::get('/', function (){
         return redirect('/dashboard');
     });

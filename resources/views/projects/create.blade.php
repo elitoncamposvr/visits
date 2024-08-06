@@ -38,6 +38,16 @@
                                 <input type="text" name="name" id="name" class="w-full" required autofocus>
                             </div>
                             <div class="w-full mb-3">
+                                <div class="w-1/2">
+                                <label for="adm_project_id">Administrador de Projeto</label>
+                                <select name="adm_project_id" id="adm_project_id" class="w-full" required>
+                                    @foreach($users as $user)
+                                        <option value="{{ $user->id}}">{{ $user->name }}</option>
+                                    @endforeach
+                                </select>
+                                </div>
+                            </div>
+                            <div class="w-full mb-3">
                                 <label for="description">Descrição do Projeto</label>
                                 <textarea name="description" id="description" class="w-full"></textarea>
                             </div>

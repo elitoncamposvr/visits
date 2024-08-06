@@ -19,6 +19,7 @@ class LicenseController extends Controller
             ->paginate(10, array(
                 'licenses.id as license_id',
                 'licenses.expires_at as expires_at',
+                'licenses.quantity as quantity',
                 'companies.id as company_id',
                 'companies.name as name',
                 'companies.email as email',
@@ -43,7 +44,8 @@ class LicenseController extends Controller
     {
         $request->validate([
             'expires_at' => 'required',
-            'company_id' => 'required',
+            'company_id' => 'required|integer',
+            'quantity' => 'required|integer|min:1',
         ]);
 
         $date = $request->get('expires_at'). " 00:00:00";
@@ -51,6 +53,7 @@ class LicenseController extends Controller
         $license = License::query()->create([
             'expires_at' => $date,
             'company_id' => $request->get('company_id'),
+            'quantity' => $request->get('quantity'),
         ]);
 
         event(new Registered($license));

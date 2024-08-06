@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -18,7 +20,10 @@ class ProjectController extends Controller
 
     public function create()
     {
-        return view('projects.create');
+        $users = User::query()->where('company_id', Auth::user()->company_id)->get();
+        return view('projects.create',[
+            'users' => $users
+        ]);
     }
 
     public function store(Request $request)

@@ -12,7 +12,8 @@ class License extends Model
 
     protected $fillable = [
         'company_id',
-        'expires_at'
+        'expires_at',
+        'quantity'
     ];
 
 //    protected $dates = ['expires_at'];

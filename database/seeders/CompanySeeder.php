@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Company;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CompanySeeder extends Seeder
 {
@@ -13,17 +12,35 @@ class CompanySeeder extends Seeder
      */
     public function run(): void
     {
-        Company::factory()->create([
-            'name' => 'Dasheep',
-            'contact_name' => 'Leandro',
-            'email' => 'leandro@dasheep.com',
-            'status' => '1',
-            'phone' => '0',
-            'cellphone' => '0',
-            'address' => 'Av. Exemplo, 100, Centro',
-            'cep' => '78.645-000',
-            'city' => 'São Paulo',
-            'province' => 'São Paulo'
+        DB::table('companies')->insert([
+            [
+                'name' => 'Dasheep',
+                'contact_name' => 'Leandro',
+                'email' => 'leandro@dasheep.com',
+                'status' => '1',
+                'phone' => '0',
+                'cellphone' => '0',
+                'address' => 'Av. Exemplo, 100, Centro',
+                'cep' => '78.645-000',
+                'city' => 'São Paulo',
+                'province' => 'São Paulo',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Cuattro',
+                'contact_name' => 'Guilherme',
+                'email' => 'contato@cuattro.com',
+                'status' => '1',
+                'phone' => '0',
+                'cellphone' => '0',
+                'address' => 'Av. Exemplo, 100, Centro',
+                'cep' => '78.645-000',
+                'city' => 'São Paulo',
+                'province' => 'São Paulo',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ]);
     }
 }
