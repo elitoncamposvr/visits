@@ -30,23 +30,32 @@
                                         <input type="search" name="search" id="search" placeholder="Pesquisar Projeto">
                                     </form>
                                 </span>
+
+                                @if($license->quantity >= 1)
                                 <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="{{ route('projects.create') }}">
                                     <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                                     Adicionar Projeto
                                 </a>
+                                @endif
                             </div>
                         </div>
                     </div>
+
+                    @if($license->quantity < 1)
+                    <div class="w-full py-3 bg-slate-200 text-center text-red-600">
+                        Não há licenças disponíveis.
+                    </div>
+                    @endif
 
                     <div class="px-2 py-2.5 w-full flex font-semibold uppercase text-xs text-gray-800 bg-gray-100 border-b border-gray-200 dark:text-white dark:bg-neutral-900">
                         <div class="w-1/12">
 
                         </div>
-                        <div class="w-3/12">
-                            Nome
+                        <div class="w-6/12">
+                            Nome/Descrição
                         </div>
-                        <div class="w-5/12">
-                            Descrição
+                        <div class="w-2/12">
+                            Adm. Projeto
                         </div>
                         <div class="w-2/12">
                             Criado em
@@ -65,13 +74,13 @@
                                 </span>
 
                             </div>
-                            <div class="w-3/12">
+                            <div class="w-6/12">
                                 <p class="font-semibold">{{ $project->name }}</p>
+                                <p>{{ $project->description }}</p>
                             </div>
-                            <div class="w-5/12">
-                                <p class="font-semibold">{{ $project->description }}</p>
+                            <div class="w-2/12">
+                                {{ $project->adm_project_id }}
                             </div>
-
                             <div class="w-2/12 text-xs">
                                 {{ $project->created_at->format('d/m/Y') }}
                             </div>
@@ -80,8 +89,52 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                                     </svg>
-
                                 </a>
+
+                                <button type="button" class="inline-flex items-center gap-x-2 text-sm font-medium hover:text-blue-700 focus:outline-none focus:text-blue-700 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-right-{{ $license->license_id }}" data-hs-overlay="#hs-offcanvas-right-{{ $license->license_id }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                                    </svg>
+                                </button>
+
+                                <div id="hs-offcanvas-right-{{ $license->license_id }}" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-xs w-full z-[80] bg-white border-s dark:bg-neutral-800 dark:border-neutral-700" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-right-label">
+                                    <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                                        <h3 id="hs-offcanvas-right-label" class="font-bold text-gray-800 dark:text-white">
+                                            Atribuir Licença
+                                        </h3>
+                                        <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600" aria-label="Close" data-hs-overlay="#hs-offcanvas-right-{{ $license->license_id }}">
+                                            <span class="sr-only">Close</span>
+                                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 6 6 18"></path>
+                                                <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </button>
+
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="w-full text-gray-800 dark:text-neutral-400">
+                                        <form action="{{ route('licenses.store') }}" method="post" class="w-full flex flex-col">
+                                            @csrf
+
+                                            <input type="hidden" name="company_id" value="{{ $license->company_id }}">
+
+                                            <div class="w-full py-2 5">
+                                                @foreach($users as $user)
+                                                    <div class="flex py-1.5 items-center">
+                                                    <input type="checkbox" id="users[{{ $user->id }}]" name="users[{{ $user->id }}]" class="rounded mr-2">
+                                                        <label for="users[{{ $user->id }}]">{{ $user->name }}</label>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+
+                                            <button type="submit"
+                                                    class="py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                                Atribuir Licença(s)
+                                            </button>
+                                        </form>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -109,6 +162,9 @@
                         </div>
                     </div>
                     <!-- End Footer -->
+
+
+
 
                 </div>
             </div>

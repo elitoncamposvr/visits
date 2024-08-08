@@ -270,6 +270,7 @@
             </li>
             @endif
 
+            @if(Auth::user()->is_admin === false)
             <li class="hs-accordion" id="projects-accordion">
                 <button type="button"
                         class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 dark:hs-accordion-active:text-white">
@@ -311,6 +312,8 @@
                     </ul>
                 </div>
             </li>
+            @endif
+
             <li class="hs-accordion" id="projects-accordion">
                 <button type="button"
                         class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 dark:hs-accordion-active:text-white">
